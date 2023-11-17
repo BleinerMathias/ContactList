@@ -9,7 +9,6 @@ import br.edu.scl.ifsp.sdm.contactlist.R
 import br.edu.scl.ifsp.sdm.contactlist.databinding.TileContactBinding
 import br.edu.scl.ifsp.sdm.contactlist.model.Contact
 import br.edu.scl.ifsp.sdm.contactlist.view.OnContactClickListener
-
 class ContactRvAdapter(
     private val contactList:MutableList<Contact>,
     private val onContactClickListener: OnContactClickListener
@@ -22,6 +21,7 @@ class ContactRvAdapter(
     ){
         val nameTextView:TextView = tileContactBinding.nameTextView
         val emailTextView:TextView = tileContactBinding.emailTextView
+        val phoneTextView:TextView = tileContactBinding.phoneTextView
 
         // Executar logo após, a cada célula um menu de contexto
         init {
@@ -62,6 +62,7 @@ class ContactRvAdapter(
             with(holder){
                 nameTextView.text = contact.name
                 emailTextView.text = contact.email
+                phoneTextView.text = contact.phone
             }
         }
     }
